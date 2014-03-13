@@ -4,7 +4,7 @@
   "description": "A node.js lib to abstract BLE (Bluetooth Low Energy) peripherals, uses noble",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jshint *.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/sandeepmistry/noble-device/issues"
   },
-  "homepage": "https://github.com/sandeepmistry/noble-device"
+  "homepage": "https://github.com/sandeepmistry/noble-device",
+  "devDependencies": {
+    "jshint": "~2.4.4"
+  }
 }
