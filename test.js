@@ -1,0 +1,41 @@
+var async = require('async');
+
+var NobleDevice = require('./index');
+
+var TestDevice = function(peripheral) {
+  NobleDevice.call(this, peripheral);
+};
+
+NobleDevice.setup(TestDevice);
+
+TestDevice.discover(function(testDevice) {
+  console.log('found ' + testDevice.uuid);
+
+  testDevice.on('disconnect', function() {
+    console.log('disconnected!');
+    process.exit(0);
+  });
+
+  async.series([
+      function(callback) {
+        console.log('connect');
+        testDevice.connect(callback);
+      },
+      function(callback) {
+        console.log('discoverServicesAndCharacteristics');
+        testDevice.discoverServicesAndCharacteristics(callback);
+      },
+      function(callback) {
+        console.log('readDeviceName');
+        testDevice.readDeviceName(function(deviceName) {
+          console.log('\tdevice name = ' + deviceName);
+          callback();
+        });
+      },
+      function(callback) {
+        console.log('disconnect');
+        testDevice.disconnect(callback);
+      }
+    ]
+  );
+});

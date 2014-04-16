@@ -1,3 +1,1 @@
-module.exports = {
-  test: 123
-};
+module.exports = require('./lib/noble-device');
