@@ -6,7 +6,7 @@ var TestDevice = function(peripheral) {
   NobleDevice.call(this, peripheral);
 };
 
-NobleDevice.setup(TestDevice);
+NobleDevice.Util.inherits(TestDevice, NobleDevice);
 
 TestDevice.discover(function(testDevice) {
   console.log('found ' + testDevice.uuid);
