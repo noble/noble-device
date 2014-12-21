@@ -33,10 +33,11 @@ var YourThing = function(peripheral) {
 //tell Noble about the service uuid(s) you're looking for
 YourThing.SCAN_UUIDS = [YOUR_THING_UUID];
 
-//??? match that this is indeed your device
+/* or instead specify the device's name instead
 YourThing.is = function(peripheral) {
-  return (peripheral.advertisement.localName === "My Thing"); //you HAVE to specify correctly?
+  return (peripheral.advertisement.localName === "My Thing's Name");
 };
+*/
 
 //inherit noble
 NobleDevice.Util.inherits(YourThing, NobleDevice);
