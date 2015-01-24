@@ -117,3 +117,54 @@ YourThing.prototype.onDisconnect = function() {
   NobleDevice.prototype.onDisconnect.call(this);
 };
 ```
+
+
+### Discovery API
+
+__Discover All__
+
+``` javascript
+YourThing.discoverAll(function(yourThing) {
+  // called for all devices discovered
+});
+```
+
+__Stopping a Discover All__
+
+```javascript
+
+YourThing.stopDiscoverAll();
+```
+
+__Discover a single device__
+
+``` javascript
+YourThing.discover(function(yourThing) {
+  // called for only one device discovered
+});
+```
+
+__Discover with Filter__
+
+``` javascript
+YourThing.discoverWithFilter(function(device), {
+  // filter callback for device,
+  //   return true to stop discovering and choose device
+  //   return false to continue discovery
+  
+  return true; // or false
+}, function(yourThing) {
+  // called for only one device discovered that matches filter
+});
+```
+
+__Discover by UUID__
+
+``` javascript
+var uuid = " ... "; // uuid of device we want to discover
+
+YourThing.discoverByUuid(uuid, function(yourThing) {
+  // called for only one device discovered
+});
+```
+
