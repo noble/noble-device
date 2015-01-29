@@ -1,6 +1,6 @@
 {
   "name": "noble-device",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A node.js lib to abstract BLE (Bluetooth Low Energy) peripherals, uses noble",
   "main": "index.js",
   "scripts": {
