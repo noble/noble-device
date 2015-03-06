@@ -124,16 +124,18 @@ YourThing.prototype.onDisconnect = function() {
 __Discover All__
 
 ``` javascript
-YourThing.discoverAll(function(yourThing) {
+function onDiscover(yourThing) {
   // called for all devices discovered
-});
+}
+
+YourThing.discoverAll(onDiscover);
 ```
 
 __Stopping a Discover All__
 
 ```javascript
 
-YourThing.stopDiscoverAll();
+YourThing.stopDiscoverAll(onDiscover);
 ```
 
 __Discover a single device__
