@@ -26,7 +26,7 @@ var YOUR_THING_WRITE_CHAR   = 'xxxxxxxxxxxxxxxxxxxxxxxx';
 var YourThing = function(peripheral) {
   // call nobles super constructor
   NobleDevice.call(this, peripheral);
-  
+
   // setup or do anything else your module needs here
 };
 
@@ -64,7 +64,7 @@ YourThing.discover(function(yourThing) {
   });
 
   // you'll need to call connect and setup
-  yourThing.connectAndSetup(function() {
+  yourThing.connectAndSetup(function(error) {
     console.log('were connected!');
   });
 
@@ -93,7 +93,7 @@ Now in our connect and setup we can:
       console.log('data sent');
     });
 
-    yourThing.receive(function(data) {
+    yourThing.receive(function(error, data) {
       console.log('got data: ' + data);
     });
 ```
@@ -102,9 +102,9 @@ Optionally, if you need to do some device setup or close something down before d
 
 ```javascript
 YourThing.prototype.connectAndSetup = function(callback) {
-  NobleDevice.prototype.connectAndSetup.call(this, function() {
+  NobleDevice.prototype.connectAndSetup.call(this, function(error) {
     // maybe notify on a characteristic ?
-    this.notifyCharacteristic(YOUR_THING_SERVICE_UUID, YOUR_THING_NOTIFY_CHAR, true, self._onRead.bind(self), function(err) {
+    this.notifyCharacteristic(YOUR_THING_SERVICE_UUID, YOUR_THING_NOTIFY_CHAR, true, this._onRead.bind(this), function(err) {
       callback(err);
     });
   }.bind(this);
@@ -112,7 +112,7 @@ YourThing.prototype.connectAndSetup = function(callback) {
 
 YourThing.prototype.onDisconnect = function() {
   // clean up ...
-  
+
   // call super's onDisconnect
   NobleDevice.prototype.onDisconnect.call(this);
 };
@@ -153,7 +153,7 @@ YourThing.discoverWithFilter(function(device), {
   // filter callback for device,
   //   return true to stop discovering and choose device
   //   return false to continue discovery
-  
+
   return true; // or false
 }, function(yourThing) {
   // called for only one device discovered that matches filter
