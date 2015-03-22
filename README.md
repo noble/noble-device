@@ -63,8 +63,8 @@ YourThing.discover(function(yourThing) {
     console.log('we got disconnected! :( ');
   });
 
-  // you'll need to call connect and setup
-  yourThing.connectAndSetup(function(error) {
+  // you'll need to call connect and set up
+  yourThing.connectAndSetUp(function(error) {
     console.log('were connected!');
   });
 
