@@ -27,7 +27,7 @@ TestDevice.discover(function(testDevice) {
       },
       function(callback) {
         console.log('readDeviceName');
-        testDevice.readDeviceName(function(deviceName) {
+        testDevice.readDeviceName(function(error, deviceName) {
           console.log('\tdevice name = ' + deviceName);
           callback();
         });
