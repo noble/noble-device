@@ -1,3 +1,7 @@
+## Version 1.0.3
+
+ * correct missing error parameter in ```readUInt32LECharacteristic```
+
 ## Version 1.0.2
 
  * backwards compatibility fix for node 0.8 ([@brucealdridge](https://github.com/brucealdridge))
