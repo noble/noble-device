@@ -160,12 +160,12 @@ YourThing.discoverWithFilter(function(device), {
 });
 ```
 
-__Discover by UUID__
+__Discover by ID__
 
 ``` javascript
-var uuid = " ... "; // uuid of device we want to discover
+var id = " ... "; // id of device we want to discover
 
-YourThing.discoverByUuid(uuid, function(yourThing) {
+YourThing.discoverById(id, function(yourThing) {
   // called for only one device discovered
 });
 ```
