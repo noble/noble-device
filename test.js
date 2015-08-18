@@ -9,7 +9,7 @@ var TestDevice = function(peripheral) {
 NobleDevice.Util.inherits(TestDevice, NobleDevice);
 
 TestDevice.discover(function(testDevice) {
-  console.log('found ' + testDevice.uuid);
+  console.log('found ' + testDevice.id);
 
   testDevice.on('disconnect', function() {
     console.log('disconnected!');
