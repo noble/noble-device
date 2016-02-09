@@ -1,3 +1,8 @@
+## Version 1.2
+
+ * new ```stopDiscover``` API
+ * new ```discoverByAddress``` API
+
 ## Version 1.1
 
  * new ```discoverById``` API, ```discoverByUuid``` is deprecated now
