@@ -144,6 +144,12 @@ __Discover a single device__
 YourThing.discover(function(yourThing) {
   // called for only one device discovered
 });
+
+__Stopping a Discover__
+
+```javascript
+
+YourThing.stopDiscover(onDiscoverCallback);
 ```
 
 __Discover with Filter__
