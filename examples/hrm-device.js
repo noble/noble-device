@@ -1,11 +1,11 @@
 
 var async = require('async');
-var NobleDevice = require('./index');
+var NobleDevice = require('../index');
 
 var idOrName = process.argv[2];
 
 if (!idOrName) {
-  console.log("node ./test-hrm.js [ID or localname]")
+  console.log("node hrm-device.js [ID or localname]")
   process.exit(1);
 }
 
