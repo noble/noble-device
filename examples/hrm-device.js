@@ -11,7 +11,6 @@ if (!idOrName) {
 
 var HRMDevice = function(device) {
   NobleDevice.call(this, device);
-  NobleDevice.HeartRateMeasumentService.call(this);
 };
 
 HRMDevice.is = function(device) {
