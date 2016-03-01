@@ -4,7 +4,7 @@
   "description": "A Node.js lib to abstract BLE (Bluetooth Low Energy) peripherals, uses noble",
   "main": "index.js",
   "scripts": {
-    "pretest": "jshint *.js",
+    "pretest": "jshint *.js lib/. examples/.",
     "test": "mocha -R spec test/."
   },
   "repository": {
