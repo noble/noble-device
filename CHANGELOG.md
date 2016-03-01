@@ -1,3 +1,9 @@
+## Version 1.3
+
+ * Remove duplicated ```writeUInt8Characteristic``` function ([@hotchpotch](https://github.com/hotchpotch))
+ * Add heart rate measument service ([@hotchpotch](https://github.com/hotchpotch))
+ * New ```examples``` folder for examples
+
 ## Version 1.2
 
  * new ```stopDiscover``` API
