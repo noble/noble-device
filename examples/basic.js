@@ -1,6 +1,6 @@
 var async = require('async');
 
-var NobleDevice = require('./index');
+var NobleDevice = require('../index');
 
 var TestDevice = function(peripheral) {
   NobleDevice.call(this, peripheral);
