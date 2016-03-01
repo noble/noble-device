@@ -1,11 +1,11 @@
-
 var async = require('async');
+
 var NobleDevice = require('../index');
 
-var idOrName = process.argv[2];
+var idOrLocalName = process.argv[2];
 
-if (!idOrName) {
-  console.log("node hrm-device.js [ID or localname]")
+if (!idOrLocalName) {
+  console.log("node hrm-device.js [ID or local name]");
   process.exit(1);
 }
 
@@ -15,7 +15,7 @@ var HRMDevice = function(device) {
 
 HRMDevice.is = function(device) {
   var localName = device.advertisement.localName;
-  return (device.id === idOrName || localName === idOrName);
+  return (device.id === idOrLocalName || localName === idOrLocalName);
 };
 
 NobleDevice.Util.inherits(HRMDevice, NobleDevice);
@@ -41,4 +41,3 @@ HRMDevice.discover(function(device) {
     });
   });
 });
-
