@@ -1,3 +1,11 @@
+## Version 1.4
+
+ * Add battery level notification support ([@Lahorde ](https://github.com/Lahorde ))
+ * Add ```subscribeCharacteristic``` and ```unsubscribeCharacteristic```
+ * Add ```readInt8Characteristic```, ```writeInt8Characteristic```, ```readInt16LECharacteristic```, ```writeInt16LECharacteristic```, ```readInt32LECharacteristic```, and ```writeInt32LECharacteristic```
+ * Add ```hasService``` and ```hasCharacteristic```
+ * Use noble ```^1.6.0```
+
 ## Version 1.3
 
  * Remove duplicated ```writeUInt8Characteristic``` function ([@hotchpotch](https://github.com/hotchpotch))
