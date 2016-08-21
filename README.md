@@ -49,20 +49,21 @@ NobleDevice.Util.mixin(YourThing, NobleDevice.DeviceInformationService);
 module.exports = YourThing;
 ```
 
-Now to use YourThing:
+Now to use `YourThing` you must use one of the discover functions [documented below](#discovery-api) which will find your device(s) and pass instances of your object to their callback where you must call `connectAndSetUp`.
 
 ```javascript
 var YourThing = require('YourThing');
 
-YourThing.discover(function(yourThing) {
+var id = '<your devices id>';
+YourThing.discoverById(function(yourThingInstance) {
 
   // you can be notified of disconnects
-  yourThing.on('disconnect', function() {
+  yourThingInstance.on('disconnect', function() {
     console.log('we got disconnected! :( ');
   });
 
   // you'll need to call connect and set up
-  yourThing.connectAndSetUp(function(error) {
+  yourThingInstance.connectAndSetUp(function(error) {
     console.log('were connected!');
   });
 
@@ -122,7 +123,7 @@ YourThing.prototype.onDisconnect = function() {
 __Discover All__
 
 ``` javascript
-function onDiscover(yourThing) {
+function onDiscover(yourThingInstance) {
   // called for all devices discovered
 }
 
@@ -139,8 +140,8 @@ YourThing.stopDiscoverAll(onDiscover);
 __Discover a single device__
 
 ``` javascript
-YourThing.discover(function(yourThing) {
-  // called for only one device discovered
+YourThing.discover(function(yourThingInstance) {
+  // called for only the first device discovered
 });
 ```
 
@@ -160,7 +161,7 @@ YourThing.discoverWithFilter(function(device), {
   //   return false to continue discovery
 
   return true; // or false
-}, function(yourThing) {
+}, function(yourThingInstance) {
   // called for only one device discovered that matches filter
 });
 ```
@@ -170,7 +171,7 @@ __Discover by ID__
 ``` javascript
 var id = " ... "; // id of device we want to discover
 
-YourThing.discoverById(id, function(yourThing) {
+YourThing.discoverById(id, function(yourThingInstance) {
   // called for only one device discovered
 });
 ```
