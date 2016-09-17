@@ -1,6 +1,11 @@
+## Version 1.4.1
+
+ * Fixed event listener leak when discover all called multiple times ([@danielbh](https://github.com/danielbh))
+ * Use noble ```^1.7.0```
+
 ## Version 1.4
 
- * Add battery level notification support ([@Lahorde ](https://github.com/Lahorde ))
+ * Add battery level notification support ([@Lahorde](https://github.com/Lahorde))
  * Add ```subscribeCharacteristic``` and ```unsubscribeCharacteristic```
  * Add ```readInt8Characteristic```, ```writeInt8Characteristic```, ```readInt16LECharacteristic```, ```writeInt16LECharacteristic```, ```readInt32LECharacteristic```, and ```writeInt32LECharacteristic```
  * Add ```hasService``` and ```hasCharacteristic```
