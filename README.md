@@ -101,7 +101,7 @@ Optionally, if you need to do some device setup or close something down before d
 
 ```javascript
 YourThing.prototype.connectAndSetup = function(callback) {
-  NobleDevice.prototype.connectAndSetup.call(this, function(error) {
+  NobleDevice.prototype.connectAndSetUp.call(this, function(error) {
     // maybe notify on a characteristic ?
     this.notifyCharacteristic(YOUR_THING_SERVICE_UUID, YOUR_THING_NOTIFY_CHAR, true, this._onRead.bind(this), function(err) {
       callback(err);
