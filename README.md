@@ -55,7 +55,7 @@ Now to use `YourThing` you must use one of the discover functions [documented be
 var YourThing = require('YourThing');
 
 var id = '<your devices id>';
-YourThing.discoverById(function(yourThingInstance) {
+YourThing.discoverById(id, function(yourThingInstance) {
 
   // you can be notified of disconnects
   yourThingInstance.on('disconnect', function() {
